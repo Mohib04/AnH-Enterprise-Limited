@@ -6,6 +6,8 @@ function anh_setup(){
     add_theme_support( 'title-tag' );
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
+    add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote,', 'status', 'video', 'audio', 'chat' ));
+    register_nav_menu( 'main-menu', __('Main Menu', 'anh') );
 }
 
 //Register style and javascript files
@@ -37,3 +39,17 @@ if ( ! function_exists('anh_theme_style')):
 		wp_enqueue_script('bootstrap' );
     }
 endif;
+
+//Add menu li class added
+add_filter ( 'nav_menu_css_class', 'add_li_class', 10, 4 );
+
+function add_li_class ( $classes, $item, $args, $depth ){
+  $classes[] = 'menu-li';
+  return $classes;
+}
+//Add menu link class
+function add_menu_link_class($ulclass) {
+    return preg_replace('/<a /', '<a class="nav-link"', $ulclass);
+}
+
+add_filter('wp_nav_menu', 'add_menu_link_class');
