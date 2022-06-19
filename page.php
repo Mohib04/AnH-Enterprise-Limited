@@ -1,5 +1,151 @@
 <?php include_once('header.php') ?>
 
+<!-- slider section -->
+<section class=" slider_section position-relative">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="slider_item-box">
+                    <div class="slider_item-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slider_item-detail">
+                                        <div>
+                                            <h1>
+                                                Welcome to <br />
+                                                Our Fruits Shop
+                                            </h1>
+                                            <p>
+                                                There are many variations of passages of Lorem
+                                                Ipsum available, but the majority have suffered
+                                                alteration in some form, by injected humour, or
+                                                randomised words which don't look even slightly
+                                                believable.
+                                            </p>
+                                            <div class="d-flex">
+                                                <a href="" class="text-uppercase custom_orange-btn mr-3">
+                                                    Shop Now
+                                                </a>
+                                                <a href="" class="text-uppercase custom_dark-btn">
+                                                    Contact Us
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="slider_img-box">
+                                        <div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slide-img.png"
+                                                alt="" class="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="slider_item-box">
+                    <div class="slider_item-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slider_item-detail">
+                                        <div>
+                                            <h1>
+                                                Welcome to <br />
+                                                Our Fruits Shop
+                                            </h1>
+                                            <p>
+                                                There are many variations of passages of Lorem
+                                                Ipsum available, but the majority have suffered
+                                                alteration in some form, by injected humour, or
+                                                randomised words which don't look even slightly
+                                                believable.
+                                            </p>
+                                            <div class="d-flex">
+                                                <a href="" class="text-uppercase custom_orange-btn mr-3">
+                                                    Shop Now
+                                                </a>
+                                                <a href="" class="text-uppercase custom_dark-btn">
+                                                    Contact Us
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="slider_img-box">
+                                        <div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slide-img.png"
+                                                alt="" class="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="slider_item-box">
+                    <div class="slider_item-container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="slider_item-detail">
+                                        <div>
+                                            <h1>
+                                                Welcome to <br />
+                                                Our Fruits Shop
+                                            </h1>
+                                            <p>
+                                                There are many variations of passages of Lorem
+                                                Ipsum available, but the majority have suffered
+                                                alteration in some form, by injected humour, or
+                                                randomised words which don't look even slightly
+                                                believable.
+                                            </p>
+                                            <div class="d-flex">
+                                                <a href="" class="text-uppercase custom_orange-btn mr-3">
+                                                    Shop Now
+                                                </a>
+                                                <a href="" class="text-uppercase custom_dark-btn">
+                                                    Contact Us
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="slider_img-box">
+                                        <div>
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/slide-img.png"
+                                                alt="" class="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom_carousel-control">
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- end slider section -->
 
 <!-- service section -->
 
@@ -13,7 +159,9 @@
         <div class=" layout_padding2">
             <div class="card-deck">
                 <div class="card">
-                    <img class="card-img-top" src="images/card-item-1.png" alt="Card image cap" />
+                    <img class="card-img-top"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/card-item-1.png"
+                        alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Orange</h5>
                         <p class="card-text">
@@ -25,7 +173,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="images/card-item-2.png" alt="Card image cap" />
+                    <img class="card-img-top"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/card-item-2.png"
+                        alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Grapes</h5>
                         <p class="card-text">
@@ -37,7 +187,9 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img class="card-img-top" src="images/card-item-3.png" alt="Card image cap" />
+                    <img class="card-img-top"
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/card-item-3.png"
+                        alt="Card image cap" />
                     <div class="card-body">
                         <h5 class="card-title">Gauva</h5>
                         <p class="card-text">
@@ -90,7 +242,8 @@
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <div class="fruit_img-box d-flex justify-content-center align-items-center">
-                    <img src="images/orange.png" alt="" class="" width="250px" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/orange.png" alt="" class=""
+                        width="250px" />
                 </div>
             </div>
         </div>
@@ -115,7 +268,8 @@
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <div class="fruit_img-box d-flex justify-content-center ">
-                    <img src="images/grapes.png" alt="" class="" width="100px" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/grapes.png" alt="" class=""
+                        width="100px" />
                 </div>
             </div>
         </div>
@@ -140,7 +294,8 @@
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <div class="fruit_img-box d-flex justify-content-center align-items-center">
-                    <img src="images/gauva.png" alt="" class="" width="250px" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gauva.png" alt="" class=""
+                        width="250px" />
                 </div>
             </div>
         </div>
@@ -175,7 +330,8 @@
                     <div class="carousel-item active">
                         <div class="client_container layout_padding2">
                             <div class="client_img-box">
-                                <img src="images/client.png" alt="" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client.png"
+                                    alt="" />
                             </div>
                             <div class="client_detail">
                                 <h3>
@@ -194,7 +350,8 @@
                     <div class="carousel-item">
                         <div class="client_container layout_padding2">
                             <div class="client_img-box">
-                                <img src="images/client.png" alt="" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client.png"
+                                    alt="" />
                             </div>
                             <div class="client_detail">
                                 <h3>
@@ -213,7 +370,8 @@
                     <div class="carousel-item">
                         <div class="client_container layout_padding2">
                             <div class="client_img-box">
-                                <img src="images/client.png" alt="" />
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/client.png"
+                                    alt="" />
                             </div>
                             <div class="client_detail">
                                 <h3>
@@ -400,17 +558,17 @@
                     </h5>
                     <div class="social-box">
                         <a href="">
-                            <img src="images/fb.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/fb.png" alt="">
                         </a>
 
                         <a href="">
-                            <img src="images/twitter.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/twitter.png" alt="">
                         </a>
                         <a href="">
-                            <img src="images/linkedin.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin.png" alt="">
                         </a>
                         <a href="">
-                            <img src="images/instagram.png" alt="">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/instagram.png" alt="">
                         </a>
                     </div>
                 </div>
