@@ -53,3 +53,28 @@ function add_menu_link_class($ulclass) {
 }
 
 add_filter('wp_nav_menu', 'add_menu_link_class');
+
+//Custom Post type for ANH Projects
+function anh_project(){
+    register_post_type( 'anh-project', array(
+        'labels'        => array(
+            'name'          => __('ANH Projects', 'anh'),
+            'singular_name' => __('ANH Project', 'anh'),
+            'add_new_item'  => __('Add New Project'),
+        ),
+        'public'        => true,
+        'has_archive'   => true,
+        'supports'      => array('thumbnail'),
+        'menu_icon'     => 'dashicons-admin-tools',
+        'menu_position' => 20,
+    ) );
+}
+add_action('init', 'anh_project'); 
+
+//CMB2
+if(file_exists(dirname(__FILE__).'/metabox/init.php')){
+    require_once(dirname(__FILE__).'/metabox/init.php');
+}
+if(file_exists(dirname(__FILE__).'/metabox/custom.php')){
+    require_once(dirname(__FILE__).'/metabox/custom.php');
+}
