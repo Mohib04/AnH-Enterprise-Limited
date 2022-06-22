@@ -3,6 +3,23 @@
 Template Name: Project
 */
 get_header();
+
+        function cmb2_output_file_list( $file_list_meta_id, $img_size = 'medium' ) {
+
+        // Get the list of files
+        $files = get_post_meta( get_the_ID(), $file_list_meta_id, 1 );
+
+        echo '<div class="file-list-wrap">';
+            // Loop through them and output an image
+            foreach ( (array) $files as $attachment_id => $attachment_url ) {
+            echo '<div class="file-list-image">';
+                echo wp_get_attachment_image( $attachment_id, $img_size );
+                echo '</div>';
+            }
+            echo '</div>';
+        }
+
+
 ?>
 
 
@@ -43,6 +60,11 @@ get_header();
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <?php cmb2_output_file_list( 'wiki_test_file_list', 'small' ); ?>
+                </div>
+            </div>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -58,8 +80,15 @@ get_header();
             </li>
             <li class="list-group-item"><strong>Description:</strong>
                 <?php echo get_post_meta( get_the_id(), 'description', true ); ?>
+            </li>
         </ul>
     </div>
+    <!-- Gallery -->
+
+    <!-- Gallery -->
+
 </div>
+
 <?php endwhile; wp_reset_postdata(); ?>
+<?php the_content(); ?>
 <?php get_footer(); ?>

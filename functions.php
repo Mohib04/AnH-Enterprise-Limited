@@ -19,8 +19,9 @@ if ( ! function_exists('anh_theme_style')):
         $version_string = is_string( $theme_version) ? $theme_version : false;
 
         //css
+        wp_register_style('style', get_stylesheet_uri());
         wp_register_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css',array(),$version_string);
-        wp_register_style('style', get_template_directory_uri() . '/assets/css/style.css',array(),$version_string);
+        wp_register_style('themestyle', get_template_directory_uri() . '/assets/css/themestyle.css',array(),$version_string);
         wp_register_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css',array(),$version_string);
         wp_register_style('owl', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css',array(),$version_string);
         
@@ -29,8 +30,9 @@ if ( ! function_exists('anh_theme_style')):
         wp_register_script('bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js',array(),$version_string);
 
 		// Enqueue theme stylesheet
-		wp_enqueue_style( 'bootstrap' );
 		wp_enqueue_style( 'style' );
+		wp_enqueue_style( 'bootstrap' );
+		wp_enqueue_style( 'themestyle' );
 		wp_enqueue_style( 'responsive' );
 		wp_enqueue_style( 'owl' );
         
@@ -65,11 +67,46 @@ function anh_project(){
         'public'        => true,
         'has_archive'   => true,
         'supports'      => array('thumbnail'),
-        'menu_icon'     => 'dashicons-admin-tools',
+        'menu_icon'     => 'dashicons-admin-customizer',
         'menu_position' => 20,
     ) );
+
+    register_taxonomy('anh-project-taxonomy', 'anh-project', array(
+        'labels'        => array(
+            'name'          => __('Status', 'anh'),
+            'add_new_item'  => __('Add New Status', 'anh')
+    ),
+    'public'            => true,
+    'hierarchical'      => true
+));
 }
 add_action('init', 'anh_project'); 
+
+//Custom Post Type for SRD Limited
+function srd_project(){
+    register_post_type('srd-project', array(
+        'labels'        => array(
+            'name'          => __('SRD Projects', 'anh'),
+            'singular_name' => __('SRD Project', 'anh'),
+            'add_new_item'  => __('Add New Project', 'anh')
+        ),
+        'public'        => true,
+        'has_archived'  => true,
+        'supports'      => array('title','editor','thumbnail'),
+        'menu_icon'     => 'dashicons-admin-customizer',
+        'menu_position' => 21
+    ));
+    
+    register_taxonomy('srd-project-taxonomy', 'srd-project', array(
+        'labels'        => array(
+            'name'          => __('Project Status', 'anh'),
+            'add_new_item'  =>__('Add New Status', 'anh'),
+        ),
+        'public'        => true,
+        'hierarchical'  => true
+    ));
+}
+add_action('init', 'srd_project');
 
 //CMB2
 if(file_exists(dirname(__FILE__).'/metabox/init.php')){
@@ -77,4 +114,25 @@ if(file_exists(dirname(__FILE__).'/metabox/init.php')){
 }
 if(file_exists(dirname(__FILE__).'/metabox/custom.php')){
     require_once(dirname(__FILE__).'/metabox/custom.php');
+}
+
+//Sidebar Registration
+add_action('widgets_init', 'anh_sidebars');
+function anh_sidebars(){
+    register_sidebar(array(
+        'id'            => 'right-sidebar',
+        'name'          => __('Right Side', 'anh'),
+        'description'   => __('Add widgets here', 'anh'),
+    ));
+    register_sidebar(array(
+        'id'            => 'left-sidebar',
+        'name'          => __('Left Side', 'anh'),
+        'description'   => __('Add widgets here', 'anh'),
+    ));
+}
+
+//ShortCode Registration
+add_shortcode( 'anh', 'anh_sort_code' );
+function anh_sort_code($atts, $content){
+    return $content;
 }
