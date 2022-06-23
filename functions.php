@@ -124,7 +124,7 @@ function anh_sidebars(){
         'name'          => __('Right Side', 'anh'),
         'description'   => __('Add widgets here', 'anh'),
     ));
-    register_sidebar(array(
+    register_sidebar(array( 
         'id'            => 'left-sidebar',
         'name'          => __('Left Side', 'anh'),
         'description'   => __('Add widgets here', 'anh'),
@@ -134,5 +134,24 @@ function anh_sidebars(){
 //ShortCode Registration
 add_shortcode( 'anh', 'anh_sort_code' );
 function anh_sort_code($atts, $content){
-    return $content;
+
+   $var = shortcode_atts( array(
+        'position'             => 'left',
+        'colur'                => 'red'
+    ),$atts);
+    
+    return "<h2 style='text-align:$var[position]; color: $var[colur]; '>".do_shortcode($content)."</h2>";
+}
+
+add_shortcode('vitore', 'vitore');
+function vitore($atts, $content){
+    return "ami vitrere ta";
+}
+
+//Redux Framework
+if(file_exists(dirname(__FILE__).'/redux/redux-framework.php')){
+    require_once(dirname(__FILE__).'/redux/redux-framework.php');
+}
+if(file_exists(dirname(__FILE__).'/redux/sample/anh-config.php')){
+    require_once(dirname(__FILE__).'/redux/sample/anh-config.php');
 }
